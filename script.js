@@ -1,5 +1,4 @@
 //your JS code here. If required.
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     const inputs = document.querySelectorAll('.code');
     
@@ -11,9 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         input.addEventListener('keydown', (e) => {
-            if (e.key === 'Backspace' && index > 0 && e.target.value.length === 0) {
+            if (e.key === 'Backspace' && e.target.value.length === 0 && index > 0) {
                 inputs[index - 1].focus();
             }
         });
+        
+        input.addEventListener('paste', (e) => {
+            e.preventDefault();
+            const data = e.clipboardData.getData('text').split('');
+            data.forEach((char, i) => {
+                if (i < inputs.length) {
+                    inputs[i].value = char;
+                }
+            });
+            inputs[Math.min(data.length, inputs.length) - 1].focus();
+        });
     });
+
+    inputs[0].focus(); // Focus the first input by default
 });
