@@ -1,45 +1,42 @@
 /*  your css code here. If applicable */
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
 }
 
-.otp-container {
+.container {
+    max-width: 400px;
+    margin: 40px auto;
     text-align: center;
 }
 
 #verification_heading {
     font-size: 24px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
 #verification_subtext {
     font-size: 16px;
-    margin-bottom: 20px;
+    color: #666;
+    margin-bottom: 30px;
 }
 
 .code-container {
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-between;
 }
 
 .code {
     width: 40px;
     height: 40px;
-    text-align: center;
     font-size: 24px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    outline: none;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .code:focus {
+    outline: none;
     border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 149, 255, 0.5);
 }
